@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36203.30
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RW.Application.UI.Mathematics", "Application.UI.Mathematics\RW.Application.UI.Mathematics.csproj", "{FFB4C3EA-FDB8-9B6F-31D0-B929DB31BA45}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RW.Service.Mathematics", "..\RW.Service.Mathematics\RW.Service.Mathematics\RW.Service.Mathematics.csproj", "{1A8EA7DE-381B-C41B-E4B6-6B57F4845491}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FFB4C3EA-FDB8-9B6F-31D0-B929DB31BA45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFB4C3EA-FDB8-9B6F-31D0-B929DB31BA45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFB4C3EA-FDB8-9B6F-31D0-B929DB31BA45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A8EA7DE-381B-C41B-E4B6-6B57F4845491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A8EA7DE-381B-C41B-E4B6-6B57F4845491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A8EA7DE-381B-C41B-E4B6-6B57F4845491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A8EA7DE-381B-C41B-E4B6-6B57F4845491}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
