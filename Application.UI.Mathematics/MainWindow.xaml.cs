@@ -45,7 +45,12 @@ namespace Application.UI.Mathematics
             Plot.Plot.Axes.AutoScale();
             Plot.Refresh();
         }
-
+        private void OpenEquationPlotter_Click(object sender, RoutedEventArgs e)
+        {
+            // create and show the EquationPlotter window
+            var plotter = new Application.UI.Mathematics.GUI.EquationPlotter();
+            plotter.Show();
+        }
         /// <summary>
         /// Returns a numeric range starting at 'start', stepping by 'step', up to (and possibly excluding) 'end'.
         /// </summary>
