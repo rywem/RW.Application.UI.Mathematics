@@ -9,7 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Application.UI.Mathematics
+namespace RW.Application.UI.Mathematics
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -48,7 +48,7 @@ namespace Application.UI.Mathematics
         private void OpenEquationPlotter_Click(object sender, RoutedEventArgs e)
         {
             // create and show the EquationPlotter window
-            var plotter = new Application.UI.Mathematics.GUI.EquationPlotter();
+            var plotter = new RW.Application.UI.Mathematics.GUI.EquationPlotter();
             plotter.Show();
         }
         /// <summary>

@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Application.UI.Mathematics.GUI
+namespace RW.Application.UI.Mathematics.GUI
 {
     /// <summary>
     /// Interaction logic for EquationPlotter.xaml

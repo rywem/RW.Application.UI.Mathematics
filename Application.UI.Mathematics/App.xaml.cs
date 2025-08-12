@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace Application.UI.Mathematics
+namespace RW.Application.UI.Mathematics
 {
     /// <summary>
     /// Interaction logic for App.xaml

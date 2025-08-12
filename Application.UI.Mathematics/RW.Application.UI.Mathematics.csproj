@@ -9,18 +9,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\**" />
+    <Compile Remove="ViewModels\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <EmbeddedResource Remove="ViewModels\**" />
+    <None Remove="Models\**" />
+    <None Remove="ViewModels\**" />
+    <Page Remove="Models\**" />
+    <Page Remove="ViewModels\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MathParser.org-mXparser" Version="6.1.0" />
     <PackageReference Include="ScottPlot.WPF" Version="5.0.55" />
     <PackageReference Include="WpfMath" Version="2.1.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Library.Mathematics\Library.Mathematics\Library.Mathematics.csproj" />
-  </ItemGroup>
 
 </Project>
