@@ -25,6 +25,11 @@
     <PackageReference Include="WpfMath" Version="2.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\RW.Library.Mathematics\RW.Library.Mathematics\RW.Library.Mathematics.csproj" />
+    <ProjectReference Include="..\..\RW.Service.Mathematics\RW.Service.Mathematics\RW.Service.Mathematics.csproj" />
+  </ItemGroup>
+
 
 
 </Project>
