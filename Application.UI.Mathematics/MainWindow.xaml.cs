@@ -51,6 +51,13 @@ namespace RW.Application.UI.Mathematics
             var plotter = new RW.Application.UI.Mathematics.GUI.EquationPlotter();
             plotter.Show();
         }
+        //OpenLaTeXExample_Click
+        private void OpenLaTeXExample_Click(object sender, RoutedEventArgs e)
+        {
+            // create and show the EquationPlotter window
+            var latexExample = new RW.Application.UI.Mathematics.GUI.LaTeXExample();
+            latexExample.Show();
+        }
         /// <summary>
         /// Returns a numeric range starting at 'start', stepping by 'step', up to (and possibly excluding) 'end'.
         /// </summary>

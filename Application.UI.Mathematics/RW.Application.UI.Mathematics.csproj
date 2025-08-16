@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\RW.Library.ElectricalEngineering\Library.ElectricalEngineering\RW.Library.ElectricalEngineering.csproj" />
     <ProjectReference Include="..\..\RW.Library.Mathematics\RW.Library.Mathematics\RW.Library.Mathematics.csproj" />
     <ProjectReference Include="..\..\RW.Service.Mathematics\RW.Service.Mathematics\RW.Service.Mathematics.csproj" />
   </ItemGroup>

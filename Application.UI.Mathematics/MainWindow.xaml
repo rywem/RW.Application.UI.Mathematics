@@ -9,6 +9,11 @@
         Title="MainWindow" Height="450" Width="800">
     
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -16,7 +21,11 @@
         <Button Content="Open Equation Plotter"
             Width="180"
             Height="40"
-            Click="OpenEquationPlotter_Click" Grid.Row="0"/>
+            Click="OpenEquationPlotter_Click" Grid.Row="0" Grid.Column="0"/>
+        <Button Content="Open LaTeX Example"
+            Width="180"
+            Height="40"
+            Click="OpenLaTeXExample_Click" Grid.Row="0" Grid.Column="1"/>
         <sp:WpfPlot x:Name="Plot" Margin="8" Grid.Row="1"/>
         
     </Grid>
