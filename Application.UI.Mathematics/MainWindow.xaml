@@ -26,7 +26,7 @@
             Width="180"
             Height="40"
             Click="OpenLaTeXExample_Click" Grid.Row="0" Grid.Column="1"/>
-        <sp:WpfPlot x:Name="Plot" Margin="8" Grid.Row="1"/>
+        <sp:WpfPlot x:Name="Plot" Margin="8" Grid.Row="1" Grid.ColumnSpan="3"/>
         
     </Grid>
 </Window>

@@ -10,21 +10,28 @@
     <Grid Margin="8">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,8" Grid.Row="0">
             <TextBlock VerticalAlignment="Center" Text="f(x) = " Margin="0,0,8,0"/>
             <TextBox x:Name="ExprBox" Width="380" Text="x^3 - 4*x + 1" Margin="0,0,8,0"/>
+            <Button Content="Plot" Click="Plot_Click"/>
+            
+            
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,8" Grid.Row="1">
+            
+
             <TextBlock VerticalAlignment="Center" Text="x-min:" Margin="8,0,4,0"/>
             <TextBox x:Name="XMinBox" Width="70" Text="-10" Margin="0,0,8,0"/>
             <TextBlock VerticalAlignment="Center" Text="x-max:" Margin="8,0,4,0"/>
             <TextBox x:Name="XMaxBox" Width="70" Text="10" Margin="0,0,8,0"/>
             <TextBlock VerticalAlignment="Center" Text="points:" Margin="8,0,4,0"/>
-            <TextBox x:Name="PointsBox" Width="70" Text="1000" Margin="0,0,8,0"/>
-            <Button Content="Plot" Click="Plot_Click"/>
-        </StackPanel>
+            <TextBox x:Name="PointsBox" Width="50" Text="1000" Margin="0,0,8,0"/>
 
-        <wpf:WpfPlot x:Name="Plot" Grid.Row="1"/>
+        </StackPanel>
+        <wpf:WpfPlot x:Name="Plot" Grid.Row="2"/>
     </Grid>
 </Window>
