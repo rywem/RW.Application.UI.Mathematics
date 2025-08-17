@@ -20,6 +20,9 @@ namespace RW.Application.UI.Mathematics
         {
             InitializeComponent();
             PlotSineDemo();
+            RW.Service.Mathematics.Solvers.AngouriMathService angouriMathService = new RW.Service.Mathematics.Solvers.AngouriMathService();
+            // Example usage of AngouriMathService
+            var solutions = angouriMathService.EquationSolverSample();
         }
 
         /// <summary>
