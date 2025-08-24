@@ -18,9 +18,9 @@ namespace RW.Application.UI.Mathematics.Prototyping
             // Polynomial: 2x^2 - 7x -4
             
             var poly = new Polynomial(
-                new Term(-2, new Dictionary<string, int> { { "x", 2 } }),
-                new Term(7, new Dictionary<string, int> { { "x", 1 } }),
-                new Term(4, new Dictionary<string, int>())
+                new Term(1, new Dictionary<string, int> { { "x", 3 } }),
+                //new Term(5, new Dictionary<string, int> { { "x", 1 } }),
+                new Term(-125, new Dictionary<string, int>())
             );
 
             var factors = PolynomialFactorizer.Factorize(poly, "x");
