@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using RW.Application.UI.Mathematics.Prototyping;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -22,7 +23,10 @@ namespace RW.Application.UI.Mathematics
             PlotSineDemo();
             RW.Service.Mathematics.Solvers.AngouriMathService angouriMathService = new RW.Service.Mathematics.Solvers.AngouriMathService();
             // Example usage of AngouriMathService
+            FactorizationPrototyping factorizationPrototyping = new FactorizationPrototyping();
+            factorizationPrototyping.Run();
             var solutions = angouriMathService.EquationSolverSample();
+            
         }
 
         /// <summary>
