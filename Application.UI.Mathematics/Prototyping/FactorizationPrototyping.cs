@@ -8,6 +8,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using RW.Library.Mathematics.Polynomials.Factorization;
+using RW.Library.Mathematics.Polynomials;
 namespace RW.Application.UI.Mathematics.Prototyping
 {
     public class FactorizationPrototyping
