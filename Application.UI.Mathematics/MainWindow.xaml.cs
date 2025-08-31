@@ -23,11 +23,11 @@ namespace RW.Application.UI.Mathematics
             PlotSineDemo();
             RW.Service.Mathematics.Solvers.AngouriMathService angouriMathService = new RW.Service.Mathematics.Solvers.AngouriMathService();
             // Example usage of AngouriMathService
-            PolynomalParserPrototyping polynomalParserPrototyping = new PolynomalParserPrototyping();
-            polynomalParserPrototyping.Run();
-            /*FactorizationPrototyping factorizationPrototyping = new FactorizationPrototyping();
+            //PolynomalParserPrototyping polynomalParserPrototyping = new PolynomalParserPrototyping();
+            //polynomalParserPrototyping.Run();
+            FactorizationPrototyping factorizationPrototyping = new FactorizationPrototyping();
             factorizationPrototyping.Run();
-            var solutions = angouriMathService.EquationSolverSample();*/
+            //var solutions = angouriMathService.EquationSolverSample();*/
 
         }
 

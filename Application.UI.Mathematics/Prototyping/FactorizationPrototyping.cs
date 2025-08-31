@@ -1,5 +1,5 @@
 ﻿
-using RW.Library.Mathematics.Polynomials.Factorization;
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
-using RW.Library.Mathematics.Polynomials.Factorization;
+using RW.Library.Mathematics.Factorization;
 using RW.Library.Mathematics.Polynomials;
 namespace RW.Application.UI.Mathematics.Prototyping
 {
@@ -17,14 +17,23 @@ namespace RW.Application.UI.Mathematics.Prototyping
         {
 
             // Polynomial: 2x^2 - 7x -4
-            
+
+            var poly4 = new Polynomial(
+                new Term(-1, new Dictionary<string, int> { { "x", 2 } }),
+                new Term(4, new Dictionary<string, int> { { "x", 1 } }),
+                //new Term(5, new Dictionary<string, int> { { "x", 1 } }),
+                new Term(-3, new Dictionary<string, int>())
+            );
+            var factors = PolynomialFactorizer.Factorize(poly4, "x");
+            // Polynomial: 2x^2 - 7x -4
+
             var poly = new Polynomial(
                 new Term(1, new Dictionary<string, int> { { "x", 3 } }),
                 //new Term(5, new Dictionary<string, int> { { "x", 1 } }),
                 new Term(-125, new Dictionary<string, int>())
             );
 
-            var factors = PolynomialFactorizer.Factorize(poly, "x");
+            factors = PolynomialFactorizer.Factorize(poly, "x");
 
             Debug.WriteLine("Factors:");
             foreach (var f in factors)
