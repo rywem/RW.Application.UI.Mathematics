@@ -14,82 +14,37 @@ namespace RW.Application.UI.Mathematics.Prototyping
     { 
         public void Run()
         {
-            var factors = new List<Factor>
+            try
             {
-                new Factor("(a+h)"),
-                new Factor("(a+h)"),
-                new Factor("(a+h)"),
+                // 1) Classic reducible
+                var poly1 = Polynomial.Parse("2x^2 - 7x - 4");
+                var factorTree1 = PolynomialFactorization.Factorize(poly1);
+                // factorTree1.ToString() => "(2x+1)(x-4)"
+                var expanded1 = PolynomialExpansion.Expand(factorTree1); // back to 2x^2 - 7x - 4
 
-            };
-            /*var factors = new List<Factor>
-            {
-            new Factor("(2x+1)"),
-            new Factor("(x-4)")
-            };*/
-            var expanded = PolynomialExpansion.ExpandFactors(factors);
-            Debug.WriteLine(expanded);
-            // Polynomial: 2x^2 - 7x -4
+                // 2) Irreducible over Q (discriminant = 17)
+                var poly2 = Polynomial.Parse("-2x^2 - 7x - 4");
+                var factorTree2 = PolynomialFactorization.Factorize(poly2);
+                // => "(-1)(2x^2+7x+4)"  (product with integer-only leaves)
+                var expanded2 = PolynomialExpansion.Expand(factorTree2);
 
-            var poly4 = new Polynomial(
-                new Term(-1, new Dictionary<string, int> { { "x", 3 } }),
-                new Term(1, new Dictionary<string, int> { { "x", 1 } }) //,
-                //new Term(5, new Dictionary<string, int> { { "x", 1 } }),
-                //new Term(-3, new Dictionary<string, int>())
-            );
-             factors = PolynomialFactorization.Factorize(poly4, "x");
-            // Polynomial: 2x^2 - 7x -4
+                // 3) Multivariate expansion
+                var factorTree3 = Factor.Product(
+                    Factor.Parse("(a+h)"),
+                    Factor.Parse("(a+h)"),
+                    Factor.Parse("(a+h)")
+                );
+                var expanded3 = PolynomialExpansion.Expand(factorTree3);
+                // => a^3 + 3a^2h + 3ah^2 + h^3 (ordering per ToString())
 
-            var poly = new Polynomial(
-                new Term(1, new Dictionary<string, int> { { "x", 3 } }),
-                //new Term(5, new Dictionary<string, int> { { "x", 1 } }),
-                new Term(-125, new Dictionary<string, int>())
-            );
-
-            factors = PolynomialFactorization.Factorize(poly, "x");
-
-            Debug.WriteLine("Factors:");
-            foreach (var f in factors)
-            {
-                Debug.WriteLine(f);
+                // returns [(-1), (2x+1), (x-4)] as Factor objects (each wrapping a Polynomial)
             }
-            // Polynomial: x^2 - 5x + 6
-            // results in (x - 2)(x - 3)
-            var poly2 = new Polynomial(
-                new Term(1, new Dictionary<string, int> { { "x", 2 } }),
-                new Term(-5, new Dictionary<string, int> { { "x", 1 } }),
-                new Term(6, new Dictionary<string, int>())
-            );
-
-            Debug.WriteLine($"Polynomial: {poly2}");
-
-            var factors2 = PolynomialFactorization.Factorize(poly2, "x");
-
-            Debug.WriteLine("Factors:");
-            foreach (var f in factors2)
+            catch (Exception ex)
             {
-                Debug.WriteLine(f);
+                Debug.WriteLine("Error: " + ex.Message);
             }
-            /* // Example: 2x^2y + -5xy + 2y
-             var poly = new Polynomial(
-                 new Term(2, new Dictionary<string, int> { { "x", 2 }, { "y", 1 } }),
-                 new Term(-5, new Dictionary<string, int> { { "x", 1 }, { "y", 1 } }),
-                 new Term(2, new Dictionary<string, int> { { "y", 1 } })
-             );
-
-             Debug.WriteLine($"Polynomial: {poly}");
-
-             // Factor over x
-             var xFactors = PolynomialFactorizer.Factorize(poly, "x");
-             Debug.WriteLine("Factors in x:");
-             foreach (var f in xFactors) Debug.WriteLine(f);
-
-             // Factor over y (if possible)
-             var yFactors = PolynomialFactorizer.Factorize(poly, "y");
-             Debug.WriteLine("Factors in y:");
-             foreach (var f in yFactors) 
-                 Debug.WriteLine(f);*/
         }
-        
-    
+
+
     }
 }
