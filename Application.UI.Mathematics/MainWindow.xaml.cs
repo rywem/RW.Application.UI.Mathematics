@@ -1,4 +1,5 @@
 ﻿using org.mariuszgromada.math.mxparser;
+using RW.Application.UI.Mathematics.GUI;
 using RW.Library.Mathematics.Polynomials;
 using System;
 using System.Collections.Generic;
@@ -130,6 +131,24 @@ namespace RW.Application.UI.Mathematics
             while (pretty.Contains("  "))
                 pretty = pretty.Replace("  ", " ");
             return pretty.Trim();
+        }
+
+        private void OpenEquationPlotter_Click(object sender, RoutedEventArgs e)
+        {
+            EquationPlotter plotter = null;
+            if (!string.IsNullOrEmpty(InputBox.Text))
+            // create and show the EquationPlotter window
+                plotter = new RW.Application.UI.Mathematics.GUI.EquationPlotter(InputBox.Text);
+            else
+                plotter = new RW.Application.UI.Mathematics.GUI.EquationPlotter();
+            plotter.Show();
+        }
+        //OpenLaTeXExample_Click
+        private void OpenLaTeXExample_Click(object sender, RoutedEventArgs e)
+        {
+            // create and show the EquationPlotter window
+            var latexExample = new RW.Application.UI.Mathematics.GUI.LaTeXExample();
+            latexExample.Show();
         }
     }
 

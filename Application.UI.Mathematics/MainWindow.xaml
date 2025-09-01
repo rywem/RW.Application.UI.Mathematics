@@ -27,7 +27,15 @@
                      Text="4x^2-2x^3-2" KeyDown="InputBox_KeyDown"/>
                 <Button x:Name="ParseButton" Content="Parse and Factor"
                     Margin="8,0,0,0" Width="130" Height="28" Click="ParseButton_Click"/>
-            </StackPanel>
+            <Button Content="Plotter" Margin="8,0,0,0"
+            Width="50"
+            Height="28"
+            Click="OpenEquationPlotter_Click" Grid.Row="0" Grid.Column="0"/>
+            <Button Content="LaTeX" Margin="8,0,0,0"
+            Width="50"
+            Height="28"
+            Click="OpenLaTeXExample_Click" Grid.Row="0" Grid.Column="1"/>
+        </StackPanel>
 
             <TextBlock Grid.Row="2" x:Name="StatusBlock" Foreground="Crimson" />
 

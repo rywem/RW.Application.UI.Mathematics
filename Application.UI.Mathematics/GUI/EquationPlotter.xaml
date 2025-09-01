@@ -4,34 +4,59 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RW.Application.UI.Mathematics.GUI"
-          xmlns:wpf="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF"
+        xmlns:wpf="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF"
         mc:Ignorable="d"
         Title="EquationPlotter" Height="450" Width="800">
+
     <Grid Margin="8">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <!-- row 0: expression + buttons -->
             <RowDefinition Height="Auto"/>
+            <!-- row 1: bounds -->
+            <RowDefinition Height="Auto"/>
+            <!-- row 2: equation list -->
             <RowDefinition Height="*"/>
+            <!-- row 3: plot -->
         </Grid.RowDefinitions>
 
+        <!-- Expression and action buttons -->
         <StackPanel Orientation="Horizontal" Margin="0,0,0,8" Grid.Row="0">
             <TextBlock VerticalAlignment="Center" Text="f(x) = " Margin="0,0,8,0"/>
             <TextBox x:Name="ExprBox" Width="380" Text="x^3 - 4*x + 1" Margin="0,0,8,0"/>
-            <Button Content="Plot" Click="Plot_Click"/>
-            
-            
+            <Button Content="Plot" Click="Plot_Click" Margin="0,0,8,0"/>
+            <Button Content="Add" Click="Add_Click" Margin="0,0,8,0"/>
+            <Button Content="Clear" Click="Clear_Click"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="0,0,0,8" Grid.Row="1">
-            
 
+        <!-- Bounds -->
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,8" Grid.Row="1">
             <TextBlock VerticalAlignment="Center" Text="x-min:" Margin="8,0,4,0"/>
             <TextBox x:Name="XMinBox" Width="70" Text="-10" Margin="0,0,8,0"/>
             <TextBlock VerticalAlignment="Center" Text="x-max:" Margin="8,0,4,0"/>
             <TextBox x:Name="XMaxBox" Width="70" Text="10" Margin="0,0,8,0"/>
             <TextBlock VerticalAlignment="Center" Text="points:" Margin="8,0,4,0"/>
             <TextBox x:Name="PointsBox" Width="50" Text="1000" Margin="0,0,8,0"/>
-
         </StackPanel>
-        <wpf:WpfPlot x:Name="Plot" Grid.Row="2"/>
+
+        <!-- Running list of equations with Remove buttons -->
+        <ListBox x:Name="EqList"
+                 Grid.Row="2"
+                 ItemsSource="{Binding EquationList}"
+                 Margin="0,0,0,8">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel LastChildFill="False">
+                        <TextBlock Text="{Binding}" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                        <Button Content="Remove"
+                                Click="RemoveEquation_Click"
+                                Tag="{Binding}"/>
+                    </DockPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- Plot -->
+        <wpf:WpfPlot x:Name="Plot" Grid.Row="3"/>
     </Grid>
 </Window>
